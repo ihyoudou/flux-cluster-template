@@ -31,5 +31,9 @@ spec:
             name loki
             host logs-prod-us-central1.grafana.net
             port 443
+            tls on
+            tls.verify on
             http_user ${LOKI_HTTP_USER}
             http_passwd ${LOKI_HTTP_PASSWD}
+            labels job=fluentbit, $sub['stream']
+            auto_kubernetes_labels on
