@@ -36,5 +36,4 @@ spec:
             tls.verify on
             http_user ${LOKI_HTTP_USER}
             http_passwd ${LOKI_HTTP_PASSWD}
-            labels job=fluentbit, $sub['stream']
             auto_kubernetes_labels on
