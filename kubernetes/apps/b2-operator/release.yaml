@@ -1,0 +1,27 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: b2-operator
+  namespace: b2-operator
+spec:
+  interval: 15m
+  chart:
+    spec:
+      chart: b2operator
+      version: 0.1.0
+      sourceRef:
+        kind: HelmRepository
+        name: isseispace
+        namespace: flux-system
+  install:
+    createNamespace: true
+    remediation:
+      retries: 5
+  upgrade:
+    remediation:
+      retries: 5
+  values:
+    credentials:
+      secret:
+        useSecret: true
+        name: b2operator-credentials
