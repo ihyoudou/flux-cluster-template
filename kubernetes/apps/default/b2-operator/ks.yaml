@@ -5,12 +5,10 @@ metadata:
   name: cluster-apps-b2operator
   namespace: flux-system
 spec:
-  path: ./kubernetes/apps/default/b2-operator/app
+  dependsOn:
+    - name: cluster-apps-external-dns
+  path: ./kubernetes/apps/networking/b2-operator/app
   prune: true
-  decryption:
-    provider: sops
-    secretRef:
-      name: sops-age
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
