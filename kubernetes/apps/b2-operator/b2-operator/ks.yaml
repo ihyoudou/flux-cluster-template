@@ -5,7 +5,7 @@ metadata:
   name: cluster-apps-b2operator
   namespace: flux-system
 spec:
-  path: ./kubernetes/apps/default/b2-operator/app
+  path: ./kubernetes/apps/b2-operator/b2-operator/app
   prune: true
   sourceRef:
     kind: GitRepository
