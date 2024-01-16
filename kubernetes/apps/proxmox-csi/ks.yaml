@@ -4,8 +4,6 @@ kind: Kustomization
 metadata:
   name: cluster-apps-proxmox-csi
   namespace: flux-system
-  labels:
-    substitution.flux.home.arpa/disabled: "true"
 spec:
   path: ./kubernetes/apps/proxmox-csi/app
   prune: true

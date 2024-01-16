@@ -30,10 +30,10 @@ spec:
         - url: https://ashe.issei.space:8006/api2/json
           insecure: false
           token_id: "kubernetes-csi@pve!csi"
-          token_secret: "${proxmox_kubernetes_csi_secret:=notset}"
+          token_secret: "${PROXMOX_KUBERNETES_CSI_SECRET:=notset}"
           region: Region-1
     storageClass:
       - name: proxmox-data-xfs
-        storage: data
+        storage: nvme
         reclaimPolicy: Delete
         fstype: xfs
