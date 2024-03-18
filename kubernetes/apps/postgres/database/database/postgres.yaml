@@ -1,0 +1,22 @@
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: test-postgres
+  namespace: postgres
+spec:
+  teamId: "moira"
+  volume:
+    size: 1Gi
+    storageClass: proxmox-data-xfs
+  numberOfInstances: 1
+  users:
+    zalando: # database owner
+      - superuser
+      - createdb
+    foo_user: [] # role for application foo
+  databases:
+    foo: zalando # dbname: owner
+  preparedDatabases:
+    bar: {}
+  postgresql:
+    version: "16"
