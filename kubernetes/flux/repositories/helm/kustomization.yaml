@@ -21,3 +21,4 @@ resources:
   - ./fluent.yaml
   - ./isseispace.yaml
   - ./zalando-postgres.yaml
+  - ./crossplane.yaml
