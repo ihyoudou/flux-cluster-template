@@ -9,8 +9,6 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  dependsOn:
-    - name: postgres-operator
   path: ./kubernetes/apps/crossplane-system/crossplane/app
   prune: true
   sourceRef:
