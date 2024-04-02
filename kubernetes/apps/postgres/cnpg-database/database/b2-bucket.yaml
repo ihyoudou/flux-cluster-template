@@ -1,0 +1,9 @@
+apiVersion: b2.issei.space/v1alpha1
+kind: Bucket
+metadata:
+  name: cnpg-backup-testing
+spec:
+  acl: private
+  writeConnectionSecretToRef:
+    name: b2-credentials-testing
+    namespace: postgres

@@ -7,3 +7,15 @@ spec:
   storage:
     size: 1Gi
     storageClass: proxmox-data-xfs
+  backup:
+    barmanObjectStore:
+      destinationPath: "s3://b2operator-testing19102023-2"
+      endpointURL: "https://s3.us-west-004.backblazeb2.com"
+      s3Credentials:
+        accessKeyId:
+          key: AWS_ACCESS_KEY_ID
+          name: b2-credentials-testing
+        secretAccessKey:
+          key: AWS_SECRET_ACCESS_KEY
+          name: b2-credentials-testing
+    retentionPolicy: "7d"
